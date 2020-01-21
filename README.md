@@ -3,7 +3,7 @@
 - 传统的做法是用安全框架或者在代码里面做验证，但是有些系统是不需要登录的，随时可以调。
 - 这时候我们可以通过对参数进行签名验证，如果参数与签名值不匹配，则请求不通过，直接返回错误信息。
 # 项目代码地址：
-   - [https://github.com/MrXuan3168/sign_server](https://github.com/MrXuan3168/sign_server)
+   - [https://github.com/cloudskys/Spirng-Boot-Sign)
 # 测试
    1. 启动项目
    2. GET请求可以用浏览器直接访问  http://localhost:8080/signTest?sign=A0161DC47118062053567CDD10FBACC6&username=admin&password=admin
