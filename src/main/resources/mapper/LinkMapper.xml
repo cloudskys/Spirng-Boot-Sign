@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.show.sign.dao.LinkMapper">
+    <resultMap id="BaseResultMap" type="com.show.sign.entity.Link">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="long_url" jdbcType="VARCHAR" property="longUrl" />
+        <result column="short_url" jdbcType="VARCHAR" property="shortUrl" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, long_url, short_url
+    </sql>
+
+    <!-- 根据长链接查询 -->
+    <select id="findByLongUrl" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from link
+        where long_url = #{longUrl,jdbcType=VARCHAR}
+    </select>
+    <!-- 根据短链接查询 -->
+    <select id="findByShortUrl" parameterType="java.lang.String" resultType="java.lang.String">
+        select long_url from link
+        where short_url = #{shortUrl,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from link
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <insert id="insert" parameterType="com.show.sign.entity.Link">
+        insert into link (id, long_url, short_url)
+        values (#{id,jdbcType=INTEGER}, #{longUrl,jdbcType=VARCHAR}, #{shortUrl,jdbcType=VARCHAR})
+    </insert>
+</mapper>
