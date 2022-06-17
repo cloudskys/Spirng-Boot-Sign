@@ -21,7 +21,7 @@
         <mapper.starter.version>2.1.5</mapper.starter.version>
         <pageHelper.starter.version>1.2.12</pageHelper.starter.version>
         <jackson.mapper.version>1.9.13</jackson.mapper.version>
-        <fast.json.version>1.2.51</fast.json.version>
+        <fast.json.version>1.2.83</fast.json.version>
         <commons.io.version>2.6</commons.io.version>
         <commons.codec.version>1.13</commons.codec.version>
     </properties>
